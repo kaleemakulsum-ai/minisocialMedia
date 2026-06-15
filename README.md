@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # Mini Social Media Platform
 
 A full-stack social media application built with Express.js (Node.js), MongoDB, HTML, CSS, and JavaScript.
@@ -237,3 +238,6 @@ This project is open source and available for educational purposes.
 ## Author
 
 Built as a mini social media platform demonstration.
+=======
+# minisocialMedia
+>>>>>>> 8a1d598c0fb8d8585d3d94041a2102abe8299903
