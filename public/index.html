@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mini Social Media</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div id="app">
+        <!-- Navigation -->
+        <nav class="navbar" id="navbar" style="display: none;">
+            <div class="nav-container">
+                <h1 class="logo">MiniSocial</h1>
+                <div class="nav-links">
+                    <a href="#" onclick="showFeed()" class="nav-link">Feed</a>
+                    <a href="#" onclick="showProfile()" class="nav-link">Profile</a>
+                    <a href="#" onclick="logout()" class="nav-link">Logout</a>
+                </div>
+            </div>
+        </nav>
+
+        <!-- Login/Register Page -->
+        <div id="auth-page" class="page">
+            <div class="auth-container">
+                <div class="auth-box">
+                    <h2 id="auth-title">Login</h2>
+                    <form id="auth-form">
+                        <div class="form-group" id="username-group" style="display: none;">
+                            <label>Username</label>
+                            <input type="text" id="username" required>
+                        </div>
+                        <div class="form-group">
+                            <label>Email</label>
+                            <input type="email" id="email" required>
+                        </div>
+                        <div class="form-group">
+                            <label>Password</label>
+                            <input type="password" id="password" required>
+                        </div>
+                        <button type="submit" class="btn-primary" id="auth-btn">Login</button>
+                    </form>
+                    <p class="auth-switch">
+                        <span id="auth-switch-text">Don't have an account?</span>
+                        <a href="#" onclick="toggleAuth()" id="auth-switch-link">Register</a>
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Feed Page -->
+        <div id="feed-page" class="page" style="display: none;">
+            <div class="container">
+                <div class="feed-container">
+                    <!-- Create Post -->
+                    <div class="create-post">
+                        <textarea id="post-content" placeholder="What's on your mind?" rows="3"></textarea>
+                        <div class="post-actions">
+                            <button onclick="createPost()" class="btn-primary">Post</button>
+                        </div>
+                    </div>
+
+                    <!-- Posts Feed -->
+                    <div id="posts-feed"></div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Profile Page -->
+        <div id="profile-page" class="page" style="display: none;">
+            <div class="container">
+                <div class="profile-container">
+                    <div class="profile-header">
+                        <div class="profile-picture" id="profile-pic"></div>
+                        <div class="profile-info">
+                            <h2 id="profile-username"></h2>
+                            <p id="profile-bio"></p>
+                            <div class="profile-stats">
+                                <span id="posts-count">0 posts</span>
+                                <span id="followers-count">0 followers</span>
+                                <span id="following-count">0 following</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="profile-actions">
+                        <button onclick="showEditProfile()" class="btn-secondary">Edit Profile</button>
+                    </div>
+                    
+                    <!-- Edit Profile Modal -->
+                    <div id="edit-profile-modal" class="modal" style="display: none;">
+                        <div class="modal-content">
+                            <h3>Edit Profile</h3>
+                            <form id="edit-profile-form">
+                                <div class="form-group">
+                                    <label>Bio</label>
+                                    <textarea id="edit-bio" rows="3"></textarea>
+                                </div>
+                                <div class="form-group">
+                                    <label>Profile Picture URL</label>
+                                    <input type="text" id="edit-profile-pic">
+                                </div>
+                                <div class="modal-actions">
+                                    <button type="submit" class="btn-primary">Save</button>
+                                    <button type="button" onclick="hideEditProfile()" class="btn-secondary">Cancel</button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+
+                    <!-- User's Posts -->
+                    <h3>Posts</h3>
+                    <div id="user-posts"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
